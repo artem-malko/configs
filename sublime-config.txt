@@ -5,7 +5,7 @@ import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7
 Пакеты:
 
 SublimeCodeIntel
-cssComb
+CSScomb (https://github.com/csscomb/sublime-csscomb)
 DevDocs
 DocBlockr
 eCSStractor
@@ -18,7 +18,24 @@ JavaScriptNext
 Less
 MarkdownEditing
 SCSS
-sideBarEnhancements
+SideBarEnhancements
 Stylus
 Theme - Soda (https://github.com/buymeasoda/soda-theme)
+
+
+user config:
+
+{
+    "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+    "font_size": 14,
+    "ignored_packages":
+    [
+        "Vintage",
+        "Markdown"
+    ],
+    "show_encoding": true,
+    "theme": "Soda Dark.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true
+}
 
