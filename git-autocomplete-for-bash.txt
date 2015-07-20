@@ -1,12 +1,28 @@
 In term:
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+curl -o ~/.git-prompt.sh \
+    https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 
 Then I added to my ~/.bash_profile file the following 'execute if it exists' code:
+
+export PATH="$(brew --prefix josegonzalez/php/php55)/bin:$PATH"
 
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-Then, in term
+if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+ source `brew --prefix`/etc/bash_completion.d/git-completion.bash
+fi
+
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWCOLORHINTS=1
+
+export PS1='\w\[\033[32m\]$(__git_ps1 " %s")\[\033[00m\] $ '
+source ~/.git-prompt.sh
+
+Then, in term (maybe not usefull)
 
 test -f ~/.git-completion.bash && . $_
